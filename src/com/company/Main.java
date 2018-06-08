@@ -5,10 +5,6 @@ public class Main {
     public static class MyLock{
         private volatile Integer orderNum;
 
-        public Integer getOrderNum() {
-            return orderNum;
-        }
-
         public MyLock(Integer orderNum) {
             this.orderNum = orderNum;
         }
@@ -46,8 +42,8 @@ public class Main {
             threads[i].start();
         }
 
-        Thread.currentThread().sleep(1000);
-        
+        Thread.currentThread().sleep(100);
+
         for (int i = 0; i < 10; i++) {
             threads[i].join();
         }
